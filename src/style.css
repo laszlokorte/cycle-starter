@@ -1,0 +1,13 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: sans-serif;
+}
+
+.container {
+    width: 70%;
+    max-width: 50em;
+    margin: 6em auto;
+}
