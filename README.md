@@ -20,7 +20,8 @@ This project uses the following packages:
 
 ```js
 "dependencies": [
-  "@cycle/dom", // Cycle DOM driver
+  "@cycle/dom", // CycleJS DOM driver
+  "@cycle/isolate", // For handling CycleJS sub components
   "@cycle/xstream-run", // Adapter to use CycleJS with xstream
   "xstream", // Reactive programming library
 ],
