@@ -1,7 +1,7 @@
 import xs from 'xstream'
 import {run} from '@cycle/xstream-run'
 import {makeDOMDriver} from '@cycle/dom'
-import {h1, div, button, p} from '@cycle/dom'
+import {html} from 'snabbdom-jsx';
 import isolate from '@cycle/isolate'
 
 // Some sub component
@@ -11,9 +11,9 @@ const subComponent = ({DOM}) => ({
             .events('click')
             .fold((acc) => !acc, false)
             .map((on) =>
-        div([
-            button('.my-button', `Toggle (${on ? 'on' : 'off'})`),
-        ])
+        <div>
+            <button class="my-button">Toggle {on ? 'on' : 'off'}</button>
+        </div>
     )
 })
 
@@ -29,12 +29,12 @@ const main = ({DOM}) => {
             clickCount$,
             childComponent.DOM
         ).map(([count, childDom]) =>
-            div([
-                h1('Cycle Starter Kit'),
-                button('.my-button', "Click me"),
-                p(`You have clicked me ${count} times`),
-                childDom,
-            ])
+            <div>
+                <h1>Cycle Starter Kit</h1>
+                <button class="my-button">Click me hard</button>
+                <p>You have clicked me {count} times</p>
+                {childDom}
+            </div>
         )
     }
 }
