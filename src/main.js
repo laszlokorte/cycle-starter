@@ -12,7 +12,7 @@ const subComponent = ({DOM}) => ({
             .fold((acc) => !acc, false)
             .map((on) =>
         <div>
-            <button class="my-button">Toggle {on ? 'on' : 'off'}</button>
+            <button className="my-button">Toggle {on ? 'on' : 'off'}</button>
         </div>
     )
 })
@@ -31,7 +31,7 @@ const main = ({DOM}) => {
         ).map(([count, childDom]) =>
             <div>
                 <h1>Cycle Starter Kit</h1>
-                <button class="my-button">Click me hard</button>
+                <button className="my-button">Click me hard</button>
                 <p>You have clicked me {count} times</p>
                 {childDom}
             </div>
